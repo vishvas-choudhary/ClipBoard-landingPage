@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 144rem;
+  margin: 0 auto;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: $font-body;
+  line-height: 1.3;
+  color: $grayishBlue;
+
+  @include breakpoint-down(small) {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: $darkGrayishBlue;
+}
+
+h1 {
+  font-size: 4rem;
+
+  @include breakpoint-down(small) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 3.6rem;
+
+  @include breakpoint-down(small) {
+    font-size: 2.2rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+
+  @include breakpoint-down(small) {
+    font-size: 1.6rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 2rem 3.6rem;
+  color: #fff;
+  border-radius: 100px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &--cyan {
+    background-color: $strongCyan;
+    box-shadow: 0px 4px 2px #289b85;
+  }
+
+  &--blue {
+    background-color: $lightBlue;
+    box-shadow: 0px 4px 2px #5562cc;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 2rem 6rem;
+  }
+}
+
+.container {
+  padding: 0 16.5rem;
+  @include breakpoint-down(small) {
+    padding: 0 2.4rem;
+    margin: 0 auto;
+  }
+}
+
+// Flexbox
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
